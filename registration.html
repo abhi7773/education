@@ -1,0 +1,1142 @@
+<!-- <!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Raleway";
+      box-sizing: border-box;
+    }
+
+    @import url(https://fonts.googleapis.com/css?family=Raleway);
+
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+    }
+
+    .top-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #00BAF0;
+      background: radial-gradient(circle at 10% 20%, rgba(216, 241, 230) 0.1%, rgba(233, 226, 226) 90.1%);
+      box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+      color: black;
+      height: 60px;
+      padding: 1em;
+      position: sticky;
+      top: 0;
+      cursor: pointer;
+      font-size: 19px;
+      text-decoration: none;
+    }
+
+    #aimhigh {
+      font-size: 24px;
+      text-shadow: 11px 6px 3px rgba(1, 1, 1, 0.1);
+    }
+
+    .one {
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      margin: 10px auto;
+      padding: 0;
+    }
+
+    .menu>li {
+      margin: 0 1rem;
+      overflow: hidden;
+    }
+
+    .menu-button-container {
+      display: none;
+      height: 100%;
+      width: 30px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-button,
+    .menu-button::before,
+    .menu-button::after {
+      display: block;
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 30px;
+      transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      border-radius: 2px;
+    }
+
+    .menu-button::before {
+      content: '';
+      margin-top: -8px;
+    }
+
+    .menu-button::after {
+      content: '';
+      margin-top: 8px;
+    }
+
+    #menu-toggle:checked+.menu-button-container .menu-button::before {
+      margin-top: 0px;
+      transform: rotate(405deg);
+    }
+
+    #menu-toggle:checked+.menu-button-container .menu-button {
+      background: rgba(255, 255, 255, 0);
+    }
+
+    #menu-toggle:checked+.menu-button-container .menu-button::after {
+      margin-top: 0px;
+      transform: rotate(-405deg);
+    }
+
+    @media (max-width: 700px) {
+      .menu-button-container {
+        display: flex;
+      }
+
+      .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 60px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #menu-toggle~.menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      #menu-toggle:checked~.menu li {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .menu>li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: rgb(255, 255, 255);
+        background-color: rgb(141, 140, 140);
+      }
+
+      .menu>li:not(:last-child) {
+        border-bottom: 1px solid #444;
+      }
+    }
+
+
+
+
+    /* nav end here */
+
+    .box02 {
+      margin-top: 25px;
+      margin-left: 150px;
+      word-spacing: 150px;
+    }
+
+    @keyframes shreejain {
+      0% {
+        word-spacing: 350px;
+        color: blueviolet;
+      }
+
+      100% {
+        word-spacing: 10px;
+        color: brown;
+      }
+    }
+
+    .box2 {
+      height: 730px;
+      width: 100%;
+      border: 1px solid #b6cdbd;
+      background: radial-gradient(circle at 10% 20%, rgba(216, 241, 230) 0.1%, rgba(233, 226, 226) 90.1%);
+      margin-top: 20px;
+      margin-left: 0px;
+      border-radius: 10px;
+      box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+      display: inline-flex;
+    }
+
+    .box001 {
+      height: 680px;
+      width: 300px;
+      border: 1px solid #b6cdbd;
+      margin-left: 50px;
+      margin-top: 40px;
+      box-shadow: 9px 9px 5px rgba(1, 1, 1, 0.1);
+    }
+
+    #logo {
+      height: 200px;
+      width: 250px;
+      border-radius: 50%;
+      margin-left: 20px;
+      margin-top: 40px;
+    }
+
+    .box002 {
+      height: 680px;
+      width: 980px;
+      border: 1px solid #b6cdbd;
+      box-shadow: 9px 9px 5px rgba(1, 1, 1, 0.1);
+      margin-left: 20px;
+      margin-top: 40px;
+    }
+
+    .headbox {
+      text-align: center;
+      font-size: 20px;
+      font-weight: lighter;
+      color: #495b4b;
+    }
+
+    .theform {
+      height: 500px;
+      width: 700px;
+      /* border: 1px solid #b6cdbd;
+            box-shadow: 9px 9px 5px rgba(1, 1, 1, 0.1); */
+      margin-left: 200px;
+      margin-top: 50px;
+    }
+
+    .form1 {
+      display: inline-flex;
+    }
+
+    .input {
+      padding: 13px;
+      font-size: 18px;
+    }
+
+    .lol {
+      padding: 8px;
+      width: 250px;
+      background-color: #f2f9f1;
+      box-shadow: 9px 9px 5px rgba(1, 1, 1, 0.1);
+    }
+
+    .area {
+      padding: 22px;
+      width: 500px;
+    }
+
+    .email {
+      padding: 8px;
+      width: 300px;
+    }
+
+    .link_wrapper {
+      /*buttom start*/
+      position: relative;
+    }
+
+    .a2 {
+      width: 100px;
+      height: 30px;
+      border-radius: 6px;
+      text-decoration: none;
+      background: #1e517e;
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 3px solid #113f67;
+      transition: all .35s;
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      border: 3px solid transparent;
+      position: absolute;
+      transform: rotate(45deg);
+      right: 0;
+      top: 0;
+      z-index: -1;
+      transition: all .35s;
+    }
+
+    .icon svg {
+      width: 30px;
+      position: absolute;
+      top: calc(50% - 15px);
+      left: calc(50% - 15px);
+      transform: rotate(-45deg);
+      fill: #416d93;
+      transition: all .35s;
+    }
+
+    .a2:hover {
+      width: 200px;
+      border: 3px solid #113f67;
+      background: transparent;
+      color: #113f67;
+    }
+
+    /* .a2:hover+.icon {
+            border: 3px solid #113f67;
+            right: -42%;
+        } */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .footer_box1 {
+      height: 300px;
+      width: 100%;
+      background-color: rgb(172, 197, 205);
+      margin-top: 30px;
+    }
+
+    .footer_box2 {
+      height: 200px;
+      width: 100%;
+      background-color: rgb(168, 193, 201);
+    }
+
+    .uls {
+      display: inline-flex;
+    }
+
+    #ul1 {
+      margin-left: 400px;
+    }
+
+    #ul2 {
+      margin-left: 400px;
+    }
+
+    .li {
+      text-decoration: none;
+      color: rgb(76, 76, 76);
+      font-size: 20px;
+    }
+
+    .li:hover {
+      color: orangered;
+      text-shadow: 2px 6px 9px rgb(113, 113, 113);
+    }
+
+    #last {
+      height: 70px;
+      width: 100%;
+      background-color: rgb(160, 183, 191);
+      color: rgb(98, 97, 97);
+      font-size: 17px;
+      word-spacing: 3px;
+    }
+
+    #wp_and_map {
+      display: inline-flex;
+      margin-left: 700px;
+    }
+
+    @media only screen and (min-width:200px) and (max-width:900px) {
+      .top-nav {
+        position: none;
+        top: none;
+        cursor: none;
+      }
+
+      .box001 {
+        height: 480px;
+        width: 300px;
+        border: 1px solid #b6cdbd;
+        margin-left: 50px;
+        margin-top: 40px;
+        box-shadow: 9px 9px 5px rgba(1, 1, 1, 0.1);
+      }
+
+      .box2 {
+        height: 1350px;
+        display: inline-block;
+      }
+
+      .theform {
+        height: 500px;
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 50px;
+      }
+
+      .box002 {
+        height: 780px;
+        width: 100%;
+        border: 1px solid #b6cdbd;
+        box-shadow: 9px 9px 5px rgba(1, 1, 1, 0.1);
+        margin-left: 0px;
+        margin-top: 40px;
+      }
+
+      .area {
+        padding: 22px;
+        width: 100%;
+      }
+
+      .form1 {
+        display: inline-block;
+      }
+
+      .footer_box1 {
+        height: 300px;
+        width: 100%;
+        background-color: rgb(172, 197, 205);
+        margin-top: 40px;
+      }
+
+      #wp_and_map {
+        display: inline-flex;
+        margin-left: 160px;
+      }
+
+      #ul1 {
+        margin-left: 60px;
+      }
+
+      #ul2 {
+        margin-left: 60px;
+      }
+
+      #button_boxx {
+        margin-left: 125px;
+        margin-top: 20px;
+      }
+
+      #wp_and_map {
+        display: inline-flex;
+        margin-left: 160px;
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <section class="top-nav">
+    <div>
+      <h1 id="aimhigh">
+        AIM HIGH
+      </h1>
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+      <div class='menu-button'></div>
+    </label>
+    <ul class="menu">
+      <li><a href="project_no3.html" class="one one"><i class="fa-solid fa-house"></i></a>&nbsp;&nbsp;
+      </li>
+      <li><a href="for_courses.html" class="two one">Courses</a>&nbsp;&nbsp;
+      </li>
+      <li><a href="02gallary.html" class="three one">Gallary</a>&nbsp;&nbsp;
+      <li><a href="registration.html" class="four one">Registration</a>&nbsp;&nbsp;
+      </li>
+      <li><a href="project_no3.html" class="five one">Contect</a>&nbsp;&nbsp;
+      </li>
+    </ul>
+  </section>
+  <div class="box2">
+    <div class="box001">
+      <img src="215-2158382_course-registration-hd-png-download.png" alt="logo" id="logo"><br><br>
+      <p style="text-align: center; line-height: 40px;">Kindly provide your contact details, which will enable us
+        to get in touch with you. Thank you for taking
+        the time to assist.</p>
+    </div>
+    <div class="box002">
+      <span class="headbox">
+        <h2><i>Fill The Details</i></h2>
+      </span>
+      <div class="theform">
+        <form>
+          <div class="form1" style="gap: 20%;">
+            <div class="input input1">
+              Enter First Name:
+              <input type="text" class="firstname lol" placeholder="First Name" name="username">
+            </div>
+            <div class="input input2">
+              Enter Last Name:
+              <input type="text" class="lastname lol" placeholder="Last Name" name="username">
+            </div>
+          </div>
+          <div class="input input3">
+            Enter Email Address:<br>
+            <input type="email" class="email lol" placeholder="Enter Email" name="email">
+          </div>
+          <div class="input input4">
+            Enter Phone Number:<br>
+            <input type="number" class="phnumber lol" placeholder="Phone Number" name="phnumber">
+          </div>
+          <div class="input input5">
+            Full Address:<br>
+            <input type="text" class="address area lol" placeholder="Address" name="Address">
+          </div>
+          <div class="input input6">
+            City:<br>
+            <input type="text" class="city lol" placeholder="City" name="city">
+          </div>
+          <div class="input input7">
+            Gander:&nbsp;&nbsp;
+            <input type="radio" class="Gander" name="Male">Male &nbsp;&nbsp;&nbsp;
+            <input type="radio" class="Gander" name="Male">Female
+          </div>
+          <div style="margin-left: 250px; margin-top: 30px;">
+            <div class="wrapper">
+              <div class="link_wrapper">
+                <a class="a2" href="for_rscit.html">Submit</a>
+                <div class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 268.832 268.832">
+                    <path
+                      d="M265.17 125.577l-80-80c-4.88-4.88-12.796-4.88-17.677 0-4.882 4.882-4.882 12.796 0 17.678l58.66 58.66H12.5c-6.903 0-12.5 5.598-12.5 12.5 0 6.903 5.597 12.5 12.5 12.5h213.654l-58.66 58.662c-4.88 4.882-4.88 12.796 0 17.678 2.44 2.44 5.64 3.66 8.84 3.66s6.398-1.22 8.84-3.66l79.997-80c4.883-4.882 4.883-12.796 0-17.678z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <section class="footer_box1">
+      <br><br>
+      <center>
+        <h2 class="heading">Shree jain Solution's</h2>
+      </center>
+      <br><br>
+      <section
+        style="font-size: 15px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <center>"Thank you for visiting our website!<br> We appreciate your time and interest in AIM high. If
+          you have
+          any
+          questions or feedback, please feel free to reach out. We're here to help!"</center>
+      </section><br>
+      <section>
+        <span id="wp_and_map">
+          <a href="#contect_box"><img src="whatsapp2.png"
+              style="height: 30px; width: 30px; opacity: 45%;"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="#contect_box"><img src="map2.png" style="height: 30px; width: 30px; opacity: 45%;"></a>
+        </span>
+      </section>
+    </section>
+    <section class="footer_box2">
+      <h4 style="color: rgb(113, 113, 113); margin-left: 20px;">All you need to know:</h4><br>
+      <div class="uls">
+        <div id="ul1">
+          <ul>
+            <li><a href="for_courses.html" class="li">all Courses</a></li>
+            <li><a href="project_no3.html" class="li">all Works/Service</a></li>
+            <li><a href="for_englishspoken.html" class="li">Spoken English</a></li>
+          </ul>
+        </div>
+        <div id="ul2">
+          <ul>
+            <li><a href="for_webdev.html" class="li">web development</a></li>
+            <li><a href="https://www.javatpoint.com/html-tutorial" class="li">for you JavaTpoint</a></li>
+            <li><a href="project_no3.html" class="li">all contects</a></li>
+          </ul>
+        </div>
+      </div>
+      <section id="last">
+        <br>
+        <center>© 2023 server's All rights reserved.</center>
+      </section>
+    </section>
+  </footer>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Raleway";
+      box-sizing: border-box;
+    }
+
+    @import url(https://fonts.googleapis.com/css?family=Raleway);
+
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+    }
+
+    .top-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #00BAF0;
+      background: radial-gradient(circle at 10% 20%, rgba(216, 241, 230) 0.1%, rgba(233, 226, 226) 90.1%);
+      box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+      color: black;
+      height: 60px;
+      padding: 1em;
+      position: sticky;
+      top: 0;
+      cursor: pointer;
+      font-size: 19px;
+      text-decoration: none;
+    }
+
+    #aimhigh {
+      font-size: 24px;
+      text-shadow: 11px 6px 3px rgba(1, 1, 1, 0.1);
+    }
+
+    .one {
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      margin: 10px auto;
+      padding: 0;
+    }
+
+    .menu>li {
+      margin: 0 1rem;
+      overflow: hidden;
+    }
+
+    .menu-button-container {
+      display: none;
+      height: 100%;
+      width: 30px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-button,
+    .menu-button::before,
+    .menu-button::after {
+      display: block;
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 30px;
+      transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      border-radius: 2px;
+    }
+
+    .menu-button::before {
+      content: '';
+      margin-top: -8px;
+    }
+
+    .menu-button::after {
+      content: '';
+      margin-top: 8px;
+    }
+
+    #menu-toggle:checked+.menu-button-container .menu-button::before {
+      margin-top: 0px;
+      transform: rotate(405deg);
+    }
+
+    #menu-toggle:checked+.menu-button-container .menu-button {
+      background: rgba(255, 255, 255, 0);
+    }
+
+    #menu-toggle:checked+.menu-button-container .menu-button::after {
+      margin-top: 0px;
+      transform: rotate(-405deg);
+    }
+
+    @media (max-width: 700px) {
+      .menu-button-container {
+        display: flex;
+      }
+
+      .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 60px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #menu-toggle~.menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      #menu-toggle:checked~.menu li {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .menu>li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: rgb(255, 255, 255);
+        background-color: rgb(141, 140, 140);
+      }
+
+      .menu>li:not(:last-child) {
+        border-bottom: 1px solid #444;
+      }
+    }
+
+
+
+
+    /* nav end here */
+
+    .box02 {
+      margin-top: 25px;
+      margin-left: 150px;
+      word-spacing: 150px;
+    }
+
+    @keyframes shreejain {
+      0% {
+        word-spacing: 350px;
+        color: blueviolet;
+      }
+
+      100% {
+        word-spacing: 10px;
+        color: brown;
+      }
+    }
+
+    .box2 {
+      height: 730px;
+      width: 100%;
+      border: 1px solid #b6cdbd;
+      background: radial-gradient(circle at 10% 20%, rgba(216, 241, 230) 0.1%, rgba(233, 226, 226) 90.1%);
+      margin-top: 20px;
+      margin-left: 0px;
+      border-radius: 10px;
+      box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+      display: inline-flex;
+    }
+
+    .box001 {
+      height: 680px;
+      width: 300px;
+      border: 1px solid #b6cdbd;
+      margin-left: 50px;
+      margin-top: 40px;
+      box-shadow: 9px 9px 5px rgba(1, 1, 1, 0.1);
+    }
+
+    #logo {
+      height: 200px;
+      width: 250px;
+      border-radius: 50%;
+      margin-left: 20px;
+      margin-top: 40px;
+    }
+
+    .box002 {
+      height: 680px;
+      width: 980px;
+      border: 1px solid #b6cdbd;
+      box-shadow: 9px 9px 5px rgba(1, 1, 1, 0.1);
+      margin-left: 20px;
+      margin-top: 40px;
+    }
+
+    .headbox {
+      text-align: center;
+      font-size: 20px;
+      font-weight: lighter;
+      color: #495b4b;
+    }
+
+    .theform {
+      height: 500px;
+      width: 700px;
+      /* border: 1px solid #b6cdbd;
+            box-shadow: 9px 9px 5px rgba(1, 1, 1, 0.1); */
+      margin-left: 200px;
+      margin-top: 50px;
+    }
+
+    .form1 {
+      display: inline-flex;
+    }
+
+    .input {
+      padding: 13px;
+      font-size: 18px;
+    }
+
+    .lol {
+      padding: 8px;
+      width: 250px;
+      background-color: #f2f9f1;
+      box-shadow: 9px 9px 5px rgba(1, 1, 1, 0.1);
+    }
+
+    .area {
+      padding: 22px;
+      width: 500px;
+    }
+
+    .email {
+      padding: 8px;
+      width: 300px;
+    }
+
+    .a2 {
+      width: 100px;
+      height: 30px;
+      border-radius: 6px;
+      text-decoration: none;
+      background: #1e517e;
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: 3px solid #113f67;
+      transition: all .35s;
+    }
+
+    .a2:hover {
+      width: 200px;
+      border: 3px solid #113f67;
+      background: transparent;
+      color: #113f67;
+    }
+
+    /* .a2:hover+.icon {
+            border: 3px solid #113f67;
+            right: -42%;
+        } */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .footer_box1 {
+      height: 300px;
+      width: 100%;
+      background-color: rgb(172, 197, 205);
+      margin-top: 30px;
+    }
+
+    .footer_box2 {
+      height: 200px;
+      width: 100%;
+      background-color: rgb(168, 193, 201);
+    }
+
+    .uls {
+      display: inline-flex;
+    }
+
+    #ul1 {
+      margin-left: 400px;
+    }
+
+    #ul2 {
+      margin-left: 400px;
+    }
+
+    .li {
+      text-decoration: none;
+      color: rgb(76, 76, 76);
+      font-size: 20px;
+    }
+
+    .li:hover {
+      color: orangered;
+      text-shadow: 2px 6px 9px rgb(113, 113, 113);
+    }
+
+    #last {
+      height: 70px;
+      width: 100%;
+      background-color: rgb(160, 183, 191);
+      color: rgb(98, 97, 97);
+      font-size: 17px;
+      word-spacing: 3px;
+    }
+
+    #wp_and_map {
+      display: inline-flex;
+      margin-left: 700px;
+    }
+
+    @media only screen and (min-width:200px) and (max-width:900px) {
+      .top-nav {
+        position: none;
+        top: none;
+        cursor: none;
+      }
+
+      .box001 {
+        height: 480px;
+        width: 300px;
+        border: 1px solid #b6cdbd;
+        margin-left: 50px;
+        margin-top: 40px;
+        box-shadow: 9px 9px 5px rgba(1, 1, 1, 0.1);
+      }
+
+      .box2 {
+        height: 1350px;
+        display: inline-block;
+      }
+
+      .theform {
+        height: 500px;
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 50px;
+      }
+
+      .box002 {
+        height: 780px;
+        width: 100%;
+        border: 1px solid #b6cdbd;
+        box-shadow: 9px 9px 5px rgba(1, 1, 1, 0.1);
+        margin-left: 0px;
+        margin-top: 40px;
+      }
+
+      .area {
+        padding: 22px;
+        width: 100%;
+      }
+
+      .form1 {
+        display: inline-block;
+      }
+
+      .footer_box1 {
+        height: 300px;
+        width: 100%;
+        background-color: rgb(172, 197, 205);
+        margin-top: 40px;
+      }
+
+      #wp_and_map {
+        display: inline-flex;
+        margin-left: 160px;
+      }
+
+      #ul1 {
+        margin-left: 60px;
+      }
+
+      #ul2 {
+        margin-left: 60px;
+      }
+
+      #button_boxx {
+        margin-left: 125px;
+        margin-top: 20px;
+      }
+
+      #wp_and_map {
+        display: inline-flex;
+        margin-left: 160px;
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <section class="top-nav">
+    <div>
+      <h1 id="aimhigh">
+        AIM HIGH
+      </h1>
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+      <div class='menu-button'></div>
+    </label>
+    <ul class="menu">
+      <li><a href="index.html" class="one one"><i class="fa-solid fa-house"></i></a>&nbsp;&nbsp;
+      </li>
+      <li><a href="for_courses.html" class="two one">Courses</a>&nbsp;&nbsp;
+      </li>
+      <li><a href="02gallary.html" class="three one">Gallary</a>&nbsp;&nbsp;
+      <li><a href="registration.html" class="four one">Registration</a>&nbsp;&nbsp;
+      </li>
+      <li><a href="index.html" class="five one">Contect</a>&nbsp;&nbsp;
+      </li>
+    </ul>
+  </section>
+  <div class="box2">
+    <div class="box001">
+      <img src="215-2158382_course-registration-hd-png-download.png" alt="logo" id="logo"><br><br>
+      <p style="text-align: center; line-height: 40px;">Kindly provide your contact details, which will enable us
+        to get in touch with you. Thank you for taking
+        the time to assist.</p>
+    </div>
+    <div class="box002">
+      <span class="headbox">
+        <h2><i>Fill The Details</i></h2>
+      </span>
+      <div class="theform">
+        <form autocomplete="off" method="post" name="google-sheet">
+          <div class="form1" style="gap: 20%;">
+            <div class="input input1">
+              Enter First Name:
+              <input type="text" class="firstname lol" placeholder="First Name" name="firstname">
+            </div>
+            <div class="input input2">
+              Enter Last Name:
+              <input type="text" class="lastname lol" placeholder="Last Name" name="lastname">
+            </div>
+          </div>
+          <div class="input input3">
+            Enter Email Address:<br>
+            <input type="email" class="email lol" placeholder="Enter Email" name="email">
+          </div>
+          <div class="input input4">
+            Enter Phone Number:<br>
+            <input type="number" class="phnumber lol" placeholder="Phone Number" name="ph">
+          </div>
+          <div class="input input5">
+            Full Address:<br>
+            <input type="text" class="address area lol" placeholder="Address" name="address">
+          </div>
+          <div class="input input6">
+            City:<br>
+            <input type="text" class="city lol" placeholder="City" name="city">
+          </div>
+          <div class="input input7">
+            Gander:&nbsp;&nbsp;
+            <input type="radio" class="Gander" name="gender">Male &nbsp;&nbsp;&nbsp;
+            <input type="radio" class="Gander" name="gender">Female
+          </div> 
+          <input type="submit" class="a2" name="submit">
+        </form>
+      </div>
+      <script>
+        const scriptURL ='https://script.google.com/macros/s/AKfycbx1aKOvbWY7ixtEYSYEqtTNO4bGSGXdeUzemAYmLzNfqB324i7jMQfOvGDt9QNbGIRdug/exec'
+        const form = document.forms['google-sheet']
+
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, {method: 'post', body: new FormData(form)})
+          .then(Response => alert("thanks for registration..! we will contact you soon..."))
+          .catch(Error => console.error('Error!', error.message))
+        })
+      </script>
+    </div>
+  </div>
+  <footer>
+    <section class="footer_box1">
+      <br><br>
+      <center>
+        <h2 class="heading">Shree jain Solution's</h2>
+      </center>
+      <br><br>
+      <section
+        style="font-size: 15px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+        <center>"Thank you for visiting our website!<br> We appreciate your time and interest in AIM high. If
+          you have
+          any
+          questions or feedback, please feel free to reach out. We're here to help!"</center>
+      </section><br>
+      <section>
+        <span id="wp_and_map">
+          <a href="#contect_box"><img src="whatsapp2.png"
+              style="height: 30px; width: 30px; opacity: 45%;"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="#contect_box"><img src="map2.png" style="height: 30px; width: 30px; opacity: 45%;"></a>
+        </span>
+      </section>
+    </section>
+    <section class="footer_box2">
+      <h4 style="color: rgb(113, 113, 113); margin-left: 20px;">All you need to know:</h4><br>
+      <div class="uls">
+        <div id="ul1">
+          <ul>
+            <li><a href="for_courses.html" class="li">all Courses</a></li>
+            <li><a href="index.html" class="li">all Works/Service</a></li>
+            <li><a href="for_englishspoken.html" class="li">Spoken English</a></li>
+          </ul>
+        </div>
+        <div id="ul2">
+          <ul>
+            <li><a href="for_webdev.html" class="li">web development</a></li>
+            <li><a href="https://www.javatpoint.com/html-tutorial" class="li">for you JavaTpoint</a></li>
+            <li><a href="index.html" class="li">all contects</a></li>
+          </ul>
+        </div>
+      </div>
+      <section id="last">
+        <br>
+        <center>© 2023 server's All rights reserved.</center>
+      </section>
+    </section>
+  </footer>
+</body>
+<!-- AKfycbx1aKOvbWY7ixtEYSYEqtTNO4bGSGXdeUzemAYmLzNfqB324i7jMQfOvGDt9QNbGIRdug -->
+</html>
