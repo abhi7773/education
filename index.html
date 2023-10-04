@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: "Raleway";
+
+      box-sizing: border-box;
+    }
+
+    @import url(https://fonts.googleapis.com/css?family=Raleway);
+
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+    }
+
+    .top-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #00BAF0;
+      background: radial-gradient(circle at 10% 20%, rgba(216, 241, 230) 0.1%, rgba(233, 226, 226) 90.1%);
+      box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+      color: black;
+      height: 60px;
+      padding: 1em;
+      position: sticky;
+      top: 0;
+      cursor: pointer;
+      font-size: 19px;
+      text-decoration: none;
+    }
+
+    #aimhigh {
+      font-size: 24px;
+      text-shadow: 11px 6px 3px rgba(1, 1, 1, 0.1);
+    }
+
+    .one {
+      text-decoration: none;
+      color: black;
+    }
+
+    .menu {
+      display: flex;
+      flex-direction: row;
+      list-style-type: none;
+      margin: 10px auto;
+      padding: 0;
+    }
+
+    .menu>li {
+      margin: 0 1rem;
+      overflow: hidden;
+    }
+
+    .menu-button-container {
+      display: none;
+      height: 100%;
+      width: 30px;
+      cursor: pointer;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-button,
+    .menu-button::before,
+    .menu-button::after {
+      display: block;
+      background-color: #fff;
+      position: absolute;
+      height: 4px;
+      width: 30px;
+      transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      border-radius: 2px;
+    }
+
+    .menu-button::before {
+      content: '';
+      margin-top: -8px;
+    }
+
+    .menu-button::after {
+      content: '';
+      margin-top: 8px;
+    }
+
+    #menu-toggle:checked+.menu-button-container .menu-button::before {
+      margin-top: 0px;
+      transform: rotate(405deg);
+    }
+
+    #menu-toggle:checked+.menu-button-container .menu-button {
+      background: rgba(255, 255, 255, 0);
+    }
+
+    #menu-toggle:checked+.menu-button-container .menu-button::after {
+      margin-top: 0px;
+      transform: rotate(-405deg);
+    }
+
+    @media (max-width: 700px) {
+      .menu-button-container {
+        display: flex;
+      }
+
+      .menu {
+        position: absolute;
+        top: 0;
+        margin-top: 60px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #menu-toggle~.menu li {
+        height: 0;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      #menu-toggle:checked~.menu li {
+        border: 1px solid #333;
+        height: 2.5em;
+        padding: 0.5em;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      }
+
+      .menu>li {
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        padding: 0.5em 0;
+        width: 100%;
+        color: rgb(255, 255, 255);
+        background-color: rgb(141, 140, 140);
+      }
+
+      .menu>li:not(:last-child) {
+        border-bottom: 1px solid #444;
+      }
+    }
+
+
+
+
+    /* nav end here */
+
+    .box02 {
+      margin-top: 25px;
+      margin-left: 150px;
+      word-spacing: 150px;
+    }
+
+    .box2 {
+      width: 1500px;
+      height: 2500px;
+      border: 1px #b6cdbd;
+      border-radius: 10px;
+      box-shadow: 4px 3px 5px rgba(1, 1, 1, 0.1);
+      background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(225, 234, 238) 90%);
+      margin-top: 10px;
+      margin-left: 10px;
+    }
+
+    #entry {
+      display: inline-flex;
+    }
+
+    .image {
+      height: 320px;
+      width: 700px;
+      margin-top: 30px;
+      border-radius: 20px;
+      margin-left: 20px;
+    }
+
+    .lines {
+      margin-top: 100px;
+      margin-left: 70px;
+    }
+
+    #liness {
+      font-size: 60px;
+      font-family: cursive;
+      color: rgb(89, 89, 89)
+    }
+
+    /* button start*/
+    @import 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300';
+
+    .button {
+      height: 100px;
+      width: 100%;
+    }
+
+    .wrapper {
+      position: absolute;
+      display: inline-flex;
+      margin-top: 40px;
+      left: 34%;
+    }
+
+    #buttonn {
+      display: block;
+      width: 200px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 18px;
+      font-family: sans-serif;
+      text-decoration: none;
+      color: #333;
+      border: 2px solid #333;
+      letter-spacing: 2px;
+      text-align: center;
+      position: relative;
+      transition: all .35s;
+    }
+
+    #buttonn span {
+      position: relative;
+      z-index: 2;
+    }
+
+    #buttonn:after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      background: gray;
+      transition: all .35s;
+    }
+
+    #buttonn:hover {
+      color: #fff;
+    }
+
+    #buttonn:hover:after {
+      width: 100%;
+    }
+
+    /* button end */
+
+    .line {
+      height: 0px;
+      width: 1300px;
+      border: 1px solid gray;
+      margin-left: 85px;
+      margin-top: 30px;
+    }
+
+    .line2 {
+      height: 0px;
+      width: 1000px;
+      border: 1px solid gray;
+      margin-left: 220px;
+      margin-top: 0px;
+    }
+
+    .logos {
+      height: 300px;
+      width: 100%;
+      display: inline-flex;
+    }
+
+    .logo1 {
+      max-height: fit-content;
+      min-width: min-content;
+      margin-left: 200px;
+      margin-top: 30px;
+    }
+
+    .logo01 {
+      height: 200px;
+      width: 200px;
+      border-radius: 50px;
+    }
+
+    .logo2 {
+      max-height: fit-content;
+      min-width: min-content;
+      margin-left: 200px;
+      margin-top: 0px;
+    }
+
+    .logo02 {
+      height: 230px;
+      width: 240px;
+      border-radius: 50px;
+    }
+
+    .logo3 {
+      max-height: fit-content;
+      min-width: min-content;
+      margin-left: 200px;
+      margin-top: 20px;
+    }
+
+    .logo03 {
+      height: 230px;
+      width: 240px;
+      border-radius: 30px;
+    }
+
+    #contents {
+      background: radial-gradient(circle at 18.7% 37.8%, rgb(250, 250, 250) 0%, rgb(214, 227, 233) 90%);
+    }
+
+    #contents:hover {
+      background: radial-gradient(circle at 18.7% 37.8%, rgb(240, 240, 240) 0%, rgb(223, 230, 233) 90%);
+    }
+
+    .home_content_1 {
+      display: inline-flex;
+      margin-top: 40px;
+    }
+
+
+    .section1 {
+      /* width: 800px; */
+      height: 250px;
+      margin-left: 100px;
+    }
+
+    .para1 {
+      font-family: 'Open Sans';
+      font-size: 20px;
+      word-spacing: 5px;
+      letter-spacing: 1px;
+      color: rgb(82, 82, 82);
+    }
+
+    .home_content_2 {
+      display: inline-flex;
+      margin-top: 20px;
+    }
+
+    #para1_photo {
+      height: 200px;
+      width: 360px;
+      border-radius: 5px;
+    }
+
+    .photoo {
+      margin-left: 100px;
+    }
+
+    .para2 {
+      width: 800px;
+      height: 250px;
+      margin-left: 90px;
+    }
+
+    .institution_inf {
+      margin-top: 40px;
+    }
+
+    .heading {
+      text-align: center;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: 30px;
+      color: rgb(89, 89, 89);
+      font-style: oblique;
+    }
+
+    .information {
+      text-align: center;
+      font-size: 20px;
+      width: 800px;
+      margin-left: 350px;
+      margin-top: 18px;
+      color: #6d7b71;
+    }
+
+    #contect_box {
+      margin-top: 30px;
+      background: radial-gradient(circle at 18.7% 37.8%, rgb(234, 234, 234) 0%, rgb(214, 227, 233) 90%);
+    }
+
+    .wp_button {
+      margin-top: 20px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .footer_box1 {
+      height: 300px;
+      width: 100%;
+      background-color: rgb(172, 197, 205);
+      margin-top: 60px;
+    }
+
+    .footer_box2 {
+      height: 200px;
+      width: 100%;
+      background-color: rgb(168, 193, 201);
+    }
+
+    .uls {
+      display: inline-flex;
+    }
+
+    #ul1 {
+      margin-left: 400px;
+    }
+
+    #ul2 {
+      margin-left: 400px;
+    }
+
+    .li {
+      text-decoration: none;
+      color: rgb(76, 76, 76);
+      font-size: 20px;
+    }
+
+    .li:hover {
+      color: orangered;
+      text-shadow: 2px 6px 9px rgb(113, 113, 113);
+    }
+
+    #last {
+      height: 70px;
+      width: 100%;
+      background-color: rgb(160, 183, 191);
+      color: rgb(98, 97, 97);
+      font-size: 17px;
+      word-spacing: 3px;
+    }
+
+    #wp_and_map {
+      display: inline-flex;
+      margin-left: 700px;
+    }
+
+    @media only screen and (min-width:200px) and (max-width:900px) {
+      .box2 {
+        width: 100%;
+        margin-left: 0px;
+        height: 3958px;
+      }
+
+      #entry {
+        display: inline-block;
+      }
+
+      .image {
+        height: 220px;
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 0px;
+      }
+
+      .lines {
+        margin-top: 30px;
+        margin-left: 50px;
+      }
+
+      #liness {
+        font-size: 30px;
+      }
+
+      .wrapper {
+        margin-top: 40px;
+        left: 1%;
+      }
+
+      #buttonn {
+        display: block;
+        width: 150px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 15px;
+      }
+
+      .line {
+        width: 350px;
+        margin-left: 20px;
+        margin-top: 30px;
+      }
+
+      .logos {
+        height: 300px;
+        width: 100%;
+        display: inline-block;
+      }
+
+      .logo1 {
+        max-height: fit-content;
+        min-width: min-content;
+        margin-left: 100px;
+        margin-top: 30px;
+      }
+
+      .logo2 {
+        margin-left: 80px;
+        margin-top: 10px;
+      }
+
+      .logo3 {
+        margin-left: 80px;
+        margin-top: 10px;
+      }
+
+      .home_content_1 {
+        display: inline-block;
+        margin-top: 40px;
+      }
+
+      .home_content_2 {
+        display: inline-block;
+        margin-top: 20px;
+      }
+
+      .photoo {
+        margin-left: 20px;
+      }
+
+      .section1 {
+        height: 350px;
+        margin-left: 20px;
+      }
+
+      .para2 {
+        width: 100%;
+        height: 400px;
+        margin-left: 0px;
+        margin-top: 40px;
+      }
+
+      #para1_photo {
+        height: 200px;
+        width: 360px;
+        border-radius: 5px;
+        margin-top: 70px;
+      }
+
+      .line2 {
+        height: 0px;
+        width: 350px;
+        border: 1px solid gray;
+        margin-left: 20px;
+        margin-top: 0px;
+      }
+
+      .information {
+        text-align: center;
+        font-size: 20px;
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 18px;
+        color: #6d7b71;
+      }
+
+      .footer_box1 {
+        height: 300px;
+        width: 100%;
+        background-color: rgb(172, 197, 205);
+        margin-top: 40px;
+      }
+
+      #wp_and_map {
+        display: inline-flex;
+        margin-left: 160px;
+      }
+
+      #ul1 {
+        margin-left: 60px;
+      }
+
+      #ul2 {
+        margin-left: 60px;
+      }
+
+      #wp_and_map {
+        display: inline-flex;
+        margin-left: 160px;
+      }
+
+
+    }
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <section class="top-nav">
+    <div>
+      <h1 id="aimhigh">
+        AIM HIGH
+      </h1>
+    </div>
+    <input id="menu-toggle" type="checkbox" />
+    <label class='menu-button-container' for="menu-toggle">
+      <div class='menu-button'></div>
+    </label>
+    <ul class="menu">
+      <li><a href="index.html" class="one one"><i class="fa-solid fa-house"></i></a>&nbsp;&nbsp;
+      </li>
+      <li><a href="for_courses.html" class="two one">Courses</a>&nbsp;&nbsp;
+      </li>
+      <li><a href="02gallary.html" class="three one">Gallary</a>&nbsp;&nbsp;
+      <li><a href="C:\xampp\htdocs\alldata\registration.html" class="four one">Registration</a>&nbsp;&nbsp;
+      </li>
+      <li><a href="index.html" class="five one">Contect</a>&nbsp;&nbsp;
+      </li>
+    </ul>
+  </section>
+  <div class="box2">
+    <div id="entry">
+      <section class="photo">
+        <img src="Red World Art Day (Banner (Landscape)).png" alt="image" class="image">
+      </section>
+      <section class="lines">
+        <h1 id="liness">"Mastery of skills<br> for a secure future."</h1>
+      </section>
+    </div>
+    <div class="button">
+      <div class="wrapper">
+        <a href="#contect_box" id="buttonn"><span>Contect
+            us</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="registration.html" id="buttonn"><span>Registration</span></a>
+      </div>
+    </div>
+    <div class="line"></div>
+    <div id="logoss">
+      <div class="logos">
+        <div class="logo1 logoo">
+          <img src="distance-education-badge-logo-design-260nw-1710718738.jpg" class="logo logo01" alt="logo">
+        </div>
+        <div class="logo2 logoo">
+          <img src="400-4000258_it-companies-in-ahmedabad-100-job-guarantee-logo.png" class="logo logo02" alt="logo">
+        </div>
+        <div class="logo3 logoo">
+          <img src="certificate-icon-11.png" class="logo logo03" alt="logo">
+        </div>
+      </div>
+    </div>
+    <div class="line2"></div>
+    <div id="contents"> <!--content start here -->
+      <div class="home_content_1 content">
+        <section class="section section1">
+          <p class="para para1"><strong>Programming languages</strong> <br>Programming languages are the foundation of
+            modern technology, enabling humans to communicate with computers
+            and create a wide range of software applications. They come in diverse forms, each with its unique syntax
+            and
+            purpose, from low-level languages like C and assembly, which provide precise control over hardware, to
+            high-level languages like Python and JavaScript, designed for ease of use and rapid development. Programming
+            languages continue to evolve, adapting to the changing demands of the digital age, and remain an essential
+            tool
+            for developers and engineers worldwide.</p>
+        </section>
+        <section class="section section1">
+          <img src="pexels-lukas-574077.jpg" id="para1_photo" alt="photo">
+        </section>
+      </div>
+      <div class="home_content_2 content">
+        <section class="photoo">
+          <img src="pexels-pixabay-265087.jpg" style="height: 200px; width: 360px; border-radius: 5px;" alt="photo">
+        </section>
+        <section class="para2">
+          <p class="para para1"><strong>Computer basics</strong> <br>Computer basic knowledge encompasses
+            fundamental concepts that are crucial for anyone interacting with these machines. Understanding hardware
+            components such as the CPU, RAM, and storage devices, as well as software basics like operating systems and
+            applications, forms the core. Additionally, knowing how to navigate the graphical user interface, manage
+            files
+            and folders, and perform basic troubleshooting can empower users to effectively utilize computers for
+            various
+            tasks, from word processing to internet browsing. </p>
+        </section>
+      </div>
+    </div>
+    <div class="institution_inf">
+      <section>
+        <h1 class="heading">Shree jain Solution's</h1>
+      </section>
+      <section class="information">students with a structured and comprehensive learning experience. These courses are
+        meticulously
+        designed to equip individuals with the knowledge, skills, and expertise required to excel in their chosen
+        fields.
+        With a strong emphasis on research, practical application, and critical thinking, institution courses empower
+        students to not only absorb information but also to analyze, synthesize, and innovate. Furthermore, the diverse
+        range of courses available ensures that learners can pursue their passions and interests while aligning their
+        education with their career goals. Ultimately, institution courses serve as a bridge between aspiration and
+        achievement, fostering personal growth, fostering personal growth, intellectual exploration, and a pathway to a
+        brighter future.
+      </section>
+    </div>
+    <div id="contect_box">
+      <section style="margin-left: 50px;">
+        <h3 style="color: rgb(72, 72, 72);">Contect us</h3>
+      </section>
+      <section class="wp_button">
+        <center style="font-size: 20px; color: rgb(95, 94, 94);">contect us on whatsapp</center><br>
+        <center><a href="https://wa.me/+918560097494"><img src="whatsapp.png" alt="whatsapp logo"
+              style="height: 50px; width: 50px;"></a></center>
+      </section>
+      <section style="font-size: 20px; color: rgb(110, 110, 110);">
+        <center>Thank you for taking the time to assist.</center>
+      </section>
+      <section><br>
+        <address style="font-size: 20px; color: rgb(109, 109, 109);">
+          <center><a
+              href="https://www.google.com/maps/place/8JQQ%2BWG3,+Sindhu+Nagar,+Shastri+Nagar,+Bhilwara,+Rajasthan+311001/@25.3396478,74.6385596,19.41z/data=!4m5!3m4!1s0x3968c3cb2952c619:0x22847f6387104a52!8m2!3d25.3397625!4d74.6387969?entry=ttu"><img
+                src="map.png" style="height: 50px; width: 50px;"></a></center>
+          <center>8JQQ+WG3, Sindhu Nagar, Bhopal Ganj, Bhilwara, Rajasthan 311001</center>
+        </address>
+      </section>
+    </div>
+    <footer>
+      <section class="footer_box1">
+        <br><br>
+        <center>
+          <h2 class="heading">Shree jain Solution's</h2>
+        </center>
+        <br><br>
+        <section
+          style="font-size: 15px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+          <center>"Thank you for visiting our website!<br> We appreciate your time and interest in AIM high. If you have
+            any
+            questions or feedback, please feel free to reach out. We're here to help!"</center>
+        </section><br>
+        <section>
+          <span id="wp_and_map">
+            <a href="#contect_box"><img src="whatsapp2.png"
+                style="height: 30px; width: 30px; opacity: 45%;"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#contect_box"><img src="map2.png" style="height: 30px; width: 30px; opacity: 45%;"></a>
+          </span>
+        </section>
+      </section>
+      <section class="footer_box2">
+        <h4 style="color: rgb(113, 113, 113); margin-left: 20px;">All you need to know:</h4><br>
+        <div class="uls">
+          <div id="ul1">
+            <ul>
+              <li><a href="for_courses.html" class="li">all Courses</a></li>
+              <li><a href="#logoss" class="li">all Works/Service</a></li>
+              <li><a href="for_englishspoken.html" class="li">Spoken English</a></li>
+            </ul>
+          </div>
+          <div id="ul2">
+            <ul>
+              <li><a href="for_webdev.html" class="li">web development</a></li>
+              <li><a href="https://www.javatpoint.com/html-tutorial" class="li">for you JavaTpoint</a></li>
+              <li><a href="#contect_box" class="li">all contects</a></li>
+            </ul>
+          </div>
+        </div>
+        <section id="last">
+          <br>
+          <center>© 2023 server's All rights reserved.</center>
+        </section>
+      </section>
+    </footer>
+  </div>
+</body>
+
+</html>
