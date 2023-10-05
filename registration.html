@@ -829,6 +829,12 @@
       font-size: 18px;
     }
 
+    .option
+    {
+      padding:4px ;
+      font-size: 14px;
+    }
+
     .lol {
       padding: 8px;
       width: 250px;
@@ -1070,10 +1076,22 @@
             City:<br>
             <input type="text" class="city lol" placeholder="City" name="city">
           </div>
+          &nbsp;&nbsp;&nbsp;<select class="option input8 lol" name="Course">
+            <option value="Not Selected">Select Course</option>
+            <option value="Tally">Tally</option>
+            <option value="RS-CIT">RS-CIT</option>
+            <option value="RS-CFA">RS-CFA</option>
+            <option value="Excel">Excel</option>
+            <option value="Typing">Typing</option>
+            <option value="Spoken English">Spoken English</option>
+            <option value="Programming Language">Programming Language</option>
+            <option value="Website Development">Website Development</option>
+            <option value="Other">Other</option>
+          </select>
           <div class="input input7">
             Gander:&nbsp;&nbsp;
-            <input type="radio" class="Gander" name="gender">Male &nbsp;&nbsp;&nbsp;
-            <input type="radio" class="Gander" name="gender">Female
+            <input type="radio" class="Gander" name="gender" value="Male">Male &nbsp;&nbsp;&nbsp;
+            <input type="radio" class="Gander" name="gender" value="Female">Female
           </div> 
           <input type="submit" class="a2" name="submit">
         </form>
